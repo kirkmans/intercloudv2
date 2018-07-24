@@ -97,20 +97,16 @@ function getCustomerPolicy (uint index) public view returns (string){
     
    
 
+//Test test   
+function removeCustomerPolicy(address _customer, uint i) public onlyBy(_customer){
+    uint index = customerPolicies[_customer].maxindex;
+    customerPolicies[_customer].policyList[i] = customerPolicies[_customer].policyList[index-1]; //save space
+    delete customerPolicies[_customer].policyList[index-1];
+    customerPolicies[_customer].maxindex--;
+}
+
 //remove policy from here, but also need to remove the data from the policy smart contracts
-function removeCustomerPolicy(address _customer, string _policy) public onlyBy(_customer){
-        uint index = customerPolicies[_customer].maxindex;
-        for (uint i = 0; i < index; i++) 
-            if (keccak256(abi.encodePacked(customerPolicies[_customer].policyList[i])) ==  keccak256(abi.encodePacked(_policy))) {
-                customerPolicies[_customer].policyList[i] = customerPolicies[_customer].policyList[index-1]; //save space
-                delete customerPolicies[_customer].policyList[index-1];
-                customerPolicies[_customer].maxindex--;
-                break;
-            }
 
-
-
-        }
 }
 
 

@@ -3,7 +3,7 @@ const Web3 = require('web3');
 const compiledMain = require('./build/main.json');
 
 const provider = new HDWalletProvider(
-  'sword service sadness pretty sausage milk elite term duty walk walnut ozone',
+  'tone rib wink must balance unveil behave latin owner apple tiger shop',
   'http://localhost:8545'
   //'https://rinkeby.infura.io/orDImgKRzwNrVCDrAk5Q'
 );

@@ -1,9 +1,10 @@
 
-import web3 from '../ethereum/web3';
+import web3 from '../../../ethereum/web3';
 import React, { Component } from 'react';
-import main from '../ethereum/main';
+import Layout from '../../../components/Layout';
+import main from '../../../ethereum/main';
 import { Table, Card, Button } from 'semantic-ui-react';
-import { Link } from '../routes';
+import { Link } from '../../../routes';
 //import Layout from '../components/Layout';
 
 
@@ -51,17 +52,18 @@ return  <Card.Group items={items} />;
 
   
   render() {  
-    const {Row, Cell} = Table;
+   // const {Row, Cell} = Table;
 
 
 return (
-<div>
-    <h1 align="center">InterCloud</h1>
-  <h2 align="center">A Cloud Policy DApp System</h2>
+  <Layout>
+
+   
+  <h3 align="center">Whitelist</h3>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"></link>
       
       <h3 align="left">Available Policies and Ethereum Addresses
-      <Link route="/policies/whitelist/whitelist">
+      <Link route="/policies/whitelist">
       <Button> WhiteList </Button>
       </Link>
       </h3>
@@ -114,7 +116,8 @@ return (
 
 
       
-       </div>
+       
+       </Layout>
 );
 }
 }
